@@ -1,1 +1,6 @@
---CREATE TABLE salesdb AS SELECT * FROM CSVREAD('classpath:sales.csv');
+CREATE TABLE IF NOT EXISTS salesdb (
+    id SERIAL PRIMARY KEY,
+    product VARCHAR(255),
+    sales DOUBLE PRECISION,
+    segment VARCHAR(100)
+);

@@ -1,31 +1,32 @@
-# Sales API (Spring Boot)
+# Sales Data Migration API
+### Overview
 
-A RESTful API built with Java and Spring Boot to manage and query sales data.  
-The project demonstrates backend development practices including REST design, database integration, and containerization using Docker.
+A containerized Java Spring Boot application designed to parse, filter, and migrate raw sales data from CSV files into a persistent PostgreSQL database.
 
-## Current Status
-This project is under active development.
+### Core Features
 
-- CSV data ingestion is **in progress**
-- Analytics endpoints (e.g., top products, top segments) are **temporarily disabled**
-- Currently supports retrieving products stored manually via API requests
+Automated CSV Inserts: Uses OpenCSV to parse and map raw data to a relational schema.
 
-## Features
-- REST API endpoints for managing products
-- Integration with PostgreSQL
-- Dockerized database setup
-- Layered architecture (Controller → Service → Repository)
+Dockerized Environment: Fully orchestrated with Docker Compose (Spring Boot + PostgreSQL + pgAdmin).
 
-## Tech Stack
-- Java
-- Spring Boot
-- PostgreSQL
-- Docker
-- REST APIs
+Business Intelligence: Custom native SQL queries to identify:
 
-## How to Run
+Top Products by revenue using high-precision casting.
 
-1. Clone the repository
-2. Start the database using Docker:
-   ```bash
-   docker-compose up
+Regional Analytics (EMEA, AMER) for targeted data migration.
+
+Data Integrity: Implemented @Transactional logic to ensure robust batch processing.
+
+### Tech Stack
+Backend: Java 21, Spring Boot 3, Spring Data JPA
+
+Database: PostgreSQL
+
+Tools: Docker, pgAdmin, OpenCSV
+
+### How to Run
+Clone the repository.
+
+Run docker-compose up to start the database and pgAdmin.
+
+Run the Spring Boot application (The CSV will auto-import on startup).

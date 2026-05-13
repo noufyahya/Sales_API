@@ -1,10 +1,9 @@
 package com.saas.Sales.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.opencsv.bean.CsvBindByName;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,12 +13,19 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class products {
+@Table(name = "salesdb")
+public class Sale {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    private Integer rowId;
+    @CsvBindByName(column = "product")
     private String product;
+
+    @CsvBindByName(column = "sales")
     private Double sales;
 
+    @CsvBindByName(column = "segment")
+    private String segment;
 }
