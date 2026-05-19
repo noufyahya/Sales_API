@@ -1,4 +1,4 @@
-# Sales Data Migration API
+# Sales KPI API
 ### Overview
 
 A containerized Java Spring Boot application designed to parse, filter, and migrate raw sales data from CSV files into a persistent PostgreSQL database.
