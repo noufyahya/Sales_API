@@ -3,6 +3,7 @@
 
 A containerized Java Spring Boot application designed to parse, filter, and migrate raw sales data from CSV files into a persistent PostgreSQL database.
 
+
 ### Core Features
 
 Automated CSV Inserts: Uses OpenCSV to parse and map raw data to a relational schema.
